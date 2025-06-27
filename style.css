@@ -113,8 +113,10 @@ canvas {
 /* スマホ対応 */
 @media (max-width: 768px) {
   canvas {
-    width: 95vw;
-    height: 95vw; /* 正方形を維持 */
+    width: 90vw;
+    height: 90vw; /* 正方形を維持 */
+    max-width: 480px; /* ← タブレット用に最大サイズも指定 */
+    max-height: 480px;
   }
   h1 {
     font-size: 22px;
