@@ -144,9 +144,10 @@ document.addEventListener("DOMContentLoaded", () => {
                   user_id: user_id,
                 }));
                 // 自分は先にスタート画面へ
-                board = null;
-                your_color = null;
-                current_player = null;
+                board = Array.from({ length: BOARD_SIZE }, () =>
+                  Array(BOARD_SIZE).fill(0)
+                );
+                init_board(board);
                 game_started = false;
                 skip = false;
                 reload = false;
@@ -315,9 +316,12 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (data.type === "opponent_surrendered") {
               alert("相手が降参しました。あなたの勝ちです。");
               document.getElementById("GameScreen").style.display = "none";
-              board = null;
-              your_color = null;
-              current_player = null;
+              board = Array.from({ length: BOARD_SIZE }, () =>
+                Array(BOARD_SIZE).fill(0)
+              );
+              init_board(board);
+              
+              
               game_started = false;
               skip = false;
               reload = false;
