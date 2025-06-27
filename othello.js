@@ -143,10 +143,15 @@ document.addEventListener("DOMContentLoaded", () => {
                   type: "surrender",
                   user_id: user_id,
                 }));
-    // 自分は先にスタート画面へ
+                // 自分は先にスタート画面へ
+                board = null;
+                your_color = null;
+                current_player = null;
+                game_started = false;
+                skip = false;
+                reload = false;
                 document.getElementById("GameScreen").style.display = "none";
-                skip = false; 
-                reload = false;  // 再接続フラグをリセット
+                
                 StartScreen();
               }
             };
@@ -310,8 +315,12 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (data.type === "opponent_surrendered") {
               alert("相手が降参しました。あなたの勝ちです。");
               document.getElementById("GameScreen").style.display = "none";
-              skip  = false;  // スキップフラグをリセット
-              reload = false;  // 再接続フラグをリセット
+              board = null;
+              your_color = null;
+              current_player = null;
+              game_started = false;
+              skip = false;
+              reload = false;
               StartScreen();
             
             
