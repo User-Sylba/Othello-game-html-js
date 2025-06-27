@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }));
     // 自分は先にスタート画面へ
                 document.getElementById("GameScreen").style.display = "none";
-                game_started = false; 
+                skip = false; 
                 reload = false;  // 再接続フラグをリセット
                 StartScreen();
               }
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
           } else if (data.type === "opponent_surrendered") {
               alert("相手が降参しました。あなたの勝ちです。");
               document.getElementById("GameScreen").style.display = "none";
-              game_started = false;  // ゲーム終了時なので false
+              skip  = false;  // スキップフラグをリセット
               reload = false;  // 再接続フラグをリセット
               StartScreen();
             
