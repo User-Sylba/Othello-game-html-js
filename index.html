@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>オンラインオセロ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>オセロ</h1>
+  <div id="status" style="display: none;"></div>
+
+  <!-- ユーザー名入力画面（PlayerName 相当） -->
+  <div id="PlayerName" class="screen">
+    <h2>ユーザー名を入力してください</h2>
+    <input type="text" id="username-input" placeholder="ユーザー名">
+    <button id="submit-name" type="button">決定</button>
+  </div>
+
+  <!-- スタート画面（StartScreen 相当） -->
+  <div id="StartScreen" class="screen" style="display: none;">
+    <h2 id="welcome-message"></h2>
+    <button id="start-match">オンライン対戦開始</button>
+    <button id="reset-user" style="margin-top: 20px;">ユーザー初期化</button>
+  </div>
+
+  <!-- マッチング画面（Matching_Screen 相当） -->
+  <div id="Matching_Screen" class="screen" style="display: none;">
+    <h2>対戦相手を探しています...</h2>
+    <p id="matching-status">接続中...</p>
+    <button id="cancel-match">キャンセル</button>
+  </div>
+
+  <!-- 対戦開始直前画面（ReadyScreen 相当） -->
+  <div id="ReadyScreen" class="screen" style="display: none;">
+    <h2 id="vs-title">対戦準備中...</h2>
+    <p>3秒後に開始します</p>
+  </div>
+
+  
+  <!-- ゲーム画面（GameScreen） -->
+<div id="GameScreen" class="screen" style="display: none;">
+    <h2 id="game-status">対戦中</h2>
+    <p id="opponent-name"></p> <!-- 対戦相手名の表示 -->
+    <p id="pass_text" style="display: none; color: yellow;">相手がパスしました</p>
+    <p id="winner_text" style="display: none; font-weight: bold;"></p>
+   
+    
+
+    <canvas id="gameCanvas"></canvas>
+  </div>
+
+  <script src="othello.js" defer></script>
+</body>
+</html>

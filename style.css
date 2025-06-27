@@ -1,0 +1,125 @@
+/* 全体スタイル */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #2c3e50;
+  color: white;
+  font-family: sans-serif;
+  overflow: hidden;              /* ← スクロールバーを完全に無効化 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;   /* ← 上に詰める */
+  height: 100vh;                 /* ← 全画面を使う */
+}
+
+/* タイトル */
+h1 {
+  margin: 10px 0 5px 0;
+  font-size: 24px;
+}
+
+/* キャンバス */
+canvas {
+  width: 480px !important;     /* ← 強制的に360固定 */
+  height: 480px !important;
+  background-color: green;
+  border: 2px solid white;
+  touch-action: none;
+  user-select: none;
+  display: block;
+  margin-top: 10px;
+}
+
+/* ステータス表示 */
+#status {
+  display: none;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 各画面共通 */
+.screen {
+  display: none;
+  margin-top: 10px;
+}
+
+/* 他のボタンやテキストなどはそのままでOK */
+
+/* ユーザー名入力 */
+#PlayerName input,
+#PlayerName button {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* スタート画面 */
+#StartScreen button {
+  font-size: 20px;
+  padding: 12px 24px;
+  margin-top: 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+#StartScreen button:hover {
+  background-color: #2980b9;
+}
+
+/* マッチング画面 */
+#Matching_Screen h2,
+#Matching_Screen p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+#cancel-match {
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+#cancel-match:hover {
+  background-color: #c0392b;
+}
+
+/* レディ画面 */
+#ReadyScreen h2,
+#ReadyScreen p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* ゲーム画面 */
+#GameScreen h2 {
+  font-size: 24px;
+  margin: 5px 0;
+}
+.winner-text {
+  font-size: 32px;
+  font-weight: bold;
+  color: yellow;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  canvas {
+    width: 95vw;
+    height: 95vw; /* 正方形を維持 */
+  }
+  h1 {
+    font-size: 22px;
+  }
+  #status {
+    font-size: 14px;
+  }
+}
